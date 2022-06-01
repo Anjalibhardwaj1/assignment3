@@ -60,7 +60,7 @@ for shape in shape_objects:
     Statistics["Shape(s)"] += 1
     if type(shape).__name__ != "Rhombus" and type(shape).__name__ != "Shape":
         Statistics[type(shape).__name__ + "(s)"] += 1
-    else:
+    elif type(shape).__name__ == "Rhombus" and type(shape).__name__ != "Shape":
         Statistics["Rhombus(es)"] += 1
 
 print("Statistics:")

@@ -1,6 +1,22 @@
-#Adding an element to the set
-#Removing all occurrances of an element from a set
-#determining the multiplicity of an element in the set
-#union of the set with another set: max multiplicity per element, new set is returned
-#intersection of the set with another set: min multiplicity per element
-#difference update: removing elements of another set from the current set and updateing the current set
+#A multiset is a bag no order duplicates are allowed
+class Multiset:
+    def __init__(self, ): 
+
+    #!!!! I dont really know if this is a method
+    def __add__(self, other):
+        #here you kinda want to do self.(add(other))
+        return Multiset()
+
+    #!!!! I dont really know if this is a method
+    def __remove__():
+    
+    def __multiplicity__(self, other):
+    
+    #!!!! I dont really know if this is a method
+    def __union__():
+
+    #!!!! I dont really know if this is a method
+    def __intersection__():
+
+    #!!!! I dont really know if this is a method
+    def __difference__():

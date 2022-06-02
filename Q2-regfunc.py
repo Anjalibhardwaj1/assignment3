@@ -9,24 +9,15 @@ def lucas(n):
 	elif n == 1:
 		return b
 	else:
-		for i in range(2,n+1):
+		for i in range(2, n + 1):
 			a, b = b, a + b
 		return b
 
 def cal_lucas(n):
     i=0
-    while i <= n:
+    while i < n:
         print(lucas(i), end=' ')
         i=i+1
-    print()
+    #print()
 
-# part b
-
-def lucas(n):
-	a, b = 2, 1
-	for i in range(n):
-	    yield a
-	    a, b = b, a + b
-
-def cal_lucas(n):
-    print(list(lucas(n)))
+#cal_lucas(21)

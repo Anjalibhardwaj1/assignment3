@@ -11,8 +11,12 @@ def lucas(n):
         return lucas(n-2) + lucas(n-1)
 
 def cal_lucas(n):
-    i = 0
-    while i <= n: 
-        i = i+1
-        print(lucas(i), end =' ')
-    print()
+    lucas_num = lucas(1)
+    i = 1
+    while lucas_num < n:
+        print(lucas_num, end=' ') 
+        i += 1
+        lucas_num = lucas(i)
+    #print()
+
+#cal_lucas(5)

@@ -1,15 +1,10 @@
-#A multiset is a bag no order duplicates are allowed
 class Multiset:
-    #!!!change 
     def add(self, setA, element):
         sA = list(setA)
         sA.append(element)
         sA.sort()
         result = '{'+str(setA)[1:-1]+ '} +' +str(element) + ' ={' +str(sA)[1:-1]+'}'
         return result
-        
-        #obj = Multiset()
-        #print(obj.add([1,2,3],1)) 
 
     def remove_occ(self, setA, element):
         sA = list(setA)
@@ -17,16 +12,10 @@ class Multiset:
         result = '{'+str(sA)[1:-1]+ '} /' +str(element) + ' ={' +str(setA)[1:-1]+'}'
         return result
 
-        #obj = Multiset()
-        #print(obj.remove_occ([1,2,2,3,3],3)) 
-
     def multiplicity(self, setA, element):
         c = setA.count(element)
         result = 'm({'+str(setA)[1:-1]+ '} , ' +str(element) + ') = '+str(c)
         return result
-
-        #obj = Multiset()
-        #print(obj.multiplicity([1,2,2,3,3],3)) 
 
     def union(self , setA , setB):
         newL = list()
@@ -49,9 +38,6 @@ class Multiset:
         result = '{' + str(setA)[1:-1] + '} U {' + str(setB)[1:-1] +'} = {' + str(newL)[1:-1] + '}'
         return result
 
-        #obj = Multiset()
-        #print(obj.union([1,2],[1, 2, 2, 3])) 
-
     def intersection(self , setA , setB):
         newL = list()
         largeL = list(set(setA).intersection(set(setB)))
@@ -61,9 +47,6 @@ class Multiset:
                 newL.append(i)
         result = '{' + str(setA)[1:-1] + '} ∩ {' + str(setB)[1:-1] +'} = {' + str(newL)[1:-1] + '}'
         return result
-        
-        #obj = Multiset()
-        #print(obj.intersection([1, 1, 2, 2, 3],[2, 2, 2, 3, 4]))
 
     def difference(self , setA , setB):
         newL = list()
@@ -77,6 +60,12 @@ class Multiset:
                     newL.append(i)
         result = '{' + str(setA)[1:-1] + '} - {' + str(setB)[1:-1] +'} = {' + str(newL)[1:-1] + '}'
         return result
-    #obj = Multiset()
-    #print(obj.difference([1, 1, 1, 2, 2, 3],[1, 2, 2, 2]))
-    #ans: 1, 1, 3
+
+if __name__ == "__main__":
+    obj = Multiset()
+    print(obj.add([1,2,3],1)) 
+    print(obj.remove_occ([1,2,2,3,3],3)) 
+    print(obj.multiplicity([1,2,2,3,3],3)) 
+    print(obj.union([1,2],[1, 2, 2, 3])) 
+    print(obj.intersection([1, 1, 2, 2, 3],[2, 2, 2, 3, 4]))
+    print(obj.difference([1, 1, 1, 2, 2, 3],[1, 2, 2, 2]))

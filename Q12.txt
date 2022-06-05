@@ -1,0 +1,42 @@
+start(q1).
+
+final(q1).
+final(q4).
+final(q6).
+
+transition(q1, 0, q2).
+transition(q2, 0, q1).
+transition(q1, 1, q3).
+transition(q2, 1, q4).
+transition(q3, 0, q6).
+transition(q4, 1, q5).
+transition(q3, 1, q5).
+transition(q4, 0, q6).
+transition(q6, 1, q5).
+transition(q5, 0, q5).
+transition(q5, 1, q5).
+transition(q6, 0, q6).
+
+%accept the list of transitions if we can accept S as a starting state
+accepts(L) :-              
+   start(S),                 
+   accepts_from(S,L).   
+                       
+%[H | L] is the list we are inputting to accepts, where H is the head so we are testing the
+%head element first, if the head is in a transition (S, HEAD, NextS) we accept it as a transition
+%if there is a transition from S to NextS vis H and if if we can accept the remaining L from NextS
+%using recursion, then we can accept the transition at S
+accepts_from(S,[H|L]) :-    
+   transition(S,H,NextS),   
+   accepts_from(NextS,L).  
+% no transitions left we accept if S is final state
+accepts_from(S,[]) :-        
+   final(S).    
+
+%accepts([0,1,0,1])
+%accepts([1,0])
+%accepts([0, 0, 1, 0])
+%accepts([1, 0, 0, 0, 0, 0])
+% q1 q3 q5
+% q2 q4 q6
+

@@ -1,0 +1,22 @@
+% Definition of Lucas numbers
+%lucas has to start with 2 1
+lucas(0, 2) :- !.
+lucas(1, 1) :- !.
+%function to get the sum of the last two numbers
+lucas(N, R) :-
+    N > 1,
+    N1 is N - 1,
+    N2 is N - 2,
+    lucas(N1, F1), 
+    lucas(N2, F2), 
+    R is F1 + F2.
+
+% Generate List
+seq(M, Result) :-
+%m-1 because it starts counting from 0
+    MNew is M-1,
+    numlist(0, MNew, List),
+    maplist(lucas, List, Result).
+	
+%seq(9, R)
+	

@@ -1,0 +1,68 @@
+name(mobeen).
+name(paul).
+name(anjali).
+
+id(mobeen, 40167581).
+id(paul, 40170314).
+id(anjali, 40113375).
+
+courseName(comp348, principles-of-programming-languages).
+courseName(comp352, data-structures-and-algorithms).
+courseName(comp233, probability-and-statistics).
+courseName(math251, linear-algebra-1).
+courseName(comp335, theoretical-compsci).
+courseName(engr371, probability-and-statistics).
+
+takes(40167581, comp348).
+takes(40167581, comp352).
+takes(40167581, comp233).
+
+takes(40170314, comp348).
+takes(40170314, math251).
+takes(40170314, comp352).
+
+takes(40113375, comp348).
+takes(40113375, comp335).
+takes(40113375, engr371).
+
+coursesM(Mobeen) :-
+    findall(Course, takes(40167581, Course), Mobeen).
+
+coursesP(Paul) :-
+    findall(Course, takes(40170314, Course), Paul).
+
+coursesA(Anjali) :-
+    findall(Course, takes(40113375, Course), Anjali).
+
+students(L) :-
+    findall(Student, name(Student), L).
+
+uniqueCourses(X) :-
+    id(_, A),
+    id(_, B),
+    id(_, C),
+    A =\= B,
+    A =\= C,
+    B =\= C,
+    takes(A, X),
+    not(takes(B, X)),
+    not(takes(C, X)).
+
+uniqueCoursesList(L) :-
+    findall(Course, uniqueCourses(Course), L).
+
+uniqueListSort(L) :-
+    uniqueCoursesList(X),
+    sort(X, L).
+
+unifyWithSorted([A,B|C]) :-
+    uniqueCoursesList(L),
+    sort(L, [A,B|C]).
+
+% 1: coursesM(Mobeen), coursesP(Paul), coursesA(Anjali).
+% 2: students(L), length(L, TeamSize).
+% 3: uniqueCoursesList(L).
+% 4: uniqueListSort(L).
+% 5: unifyWithSorted([A,B|C])
+
+link to online compiler: https://swish.swi-prolog.org/p/fDhYdcJO.pl

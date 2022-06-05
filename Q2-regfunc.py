@@ -1,4 +1,3 @@
-##!!!!!!!!!!! THIS QUESTION IS NOT DONE, READ EMAIL FROM TA
 # part a
 def lucas(n):
 	a,b = 2,1

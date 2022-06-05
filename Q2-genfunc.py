@@ -1,5 +1,4 @@
 # part b
-
 def lucas(n):
 	a, b = 2, 1
 	for i in range(n):

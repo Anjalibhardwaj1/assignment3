@@ -79,4 +79,4 @@ class Multiset:
         return result
     #obj = Multiset()
     #print(obj.difference([1, 1, 1, 2, 2, 3],[1, 2, 2, 2]))
-    #1, 1, 3
+    #ans: 1, 1, 3

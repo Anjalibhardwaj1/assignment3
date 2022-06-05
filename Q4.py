@@ -73,11 +73,10 @@ class Multiset:
                     newL.append(i)
             else:
                 a_b = setA.count(i)-setB.count(i)
-                for i in range(a_b):
+                for x in range(a_b):
                     newL.append(i)
-  
         result = '{' + str(setA)[1:-1] + '} - {' + str(setB)[1:-1] +'} = {' + str(newL)[1:-1] + '}'
-        return newL
+        return result
     #obj = Multiset()
     #print(obj.difference([1, 1, 1, 2, 2, 3],[1, 2, 2, 2]))
     #1, 1, 3

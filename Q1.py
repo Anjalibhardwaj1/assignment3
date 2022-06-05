@@ -1,3 +1,5 @@
+#QUESTION 1
+#LISTS AND GENERATORS
 def lucas(n):
     if n < 0:
         print("Please enter a number greater than 0.")
@@ -17,6 +19,5 @@ def cal_lucas(n):
         print(lucas_num, end=' ') 
         i += 1
         lucas_num = lucas(i)
-    #print()
 
 #cal_lucas(5)
